@@ -18,7 +18,9 @@ function requestHandler(req,res){
             users.push(parsedData);
             console.log(parsedData);
         });
-        res.setHeader('Location','/users');
+        // res.statusCode = 302;
+        // res.setHeader('Location','/users');
+        res.writeHead(302,{'Location':'/users'})
         return res.end();
     };
     if(url === '/users'){
