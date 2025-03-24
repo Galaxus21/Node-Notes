@@ -43,7 +43,7 @@ const server = http.createServer((req,res)=>{
         });
         res.statusCode = 302;
         res.setHeader('Location', '/');
-        // res.writeHead(302)
+        // res.writeHead(302,{'Location':'/'})
         return res.end();
     }
 
@@ -59,7 +59,22 @@ server.listen(3000);
 // The server keeps on running in an event loop, and the request listener function is triggered on every event.
 // To stop the server, we can use process.exit() in the function to hard exit the event loop.
 
-
-
+// node basics.js - to run the node file
 
 // Worker Pool - manages different threads for node heavy operations, works seperately from js.
+
+// ............Custom-Scripts.........................
+// Making custom scripts to start the node file, npm run <custom> or npm start
+// npm init
+
+// .........Ways-To-Install-Third-Party-Packages.............
+// npm install nodeman
+
+// Dev packages(dependency) vs production dependency
+
+// nodeman is a dev dependency
+
+// npm install nodeman --save-dev
+// npm install nodeman --save
+
+// npm install nodeman -g            installs globally on the machine
