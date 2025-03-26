@@ -1,5 +1,6 @@
 {
   "scripts": {
+    "basic": "nodemon app-basic.js",
     "start": "nodemon app.js"
   },
   "dependencies": {
