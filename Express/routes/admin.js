@@ -1,12 +1,14 @@
 const express = require('express');
 const path = require('path');
 
+const rootDir = require('../helper/path');
+
 const router = express.Router()   //It's like a mini express app.
 
 
 // /admin/add-user
 router.get('/add-user',(req, res, next)=>{
-    res.sendFile(path.join(__dirname, '../', 'views', 'add-user.html'))
+    res.sendFile(path.join(rootDir, 'views', 'add-user.html'))
     // __dirname is a global variable which holds the absolute path to the project folder.
     // ..(sys)../NodeJS/Express/routes
     /*
