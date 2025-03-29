@@ -7,8 +7,9 @@ const admin = require('../routes/admin');
 const router = express.Router();
 
 router.get('/',(req, res, next)=>{
+    const products = admin.products;
 
-    res.render('shop') //Automatically select shop.pug from views folder with pug as it's engine.
+    res.render('shop',{prods: products, docTitle: 'Shop'}) //Automatically selects shop.pug from views folder with pug as it's engine.
 
     // res.sendFile(path.join(rootDir,'views', 'shop.html'))
     
