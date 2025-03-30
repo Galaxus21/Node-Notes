@@ -13,9 +13,9 @@ router.get('/',(req, res, next)=>{
         prods: products, 
         title: 'Shop', 
         path:'/', 
-        hasProducts: products.length>0, 
-        activeShop: true, 
-        productCSS: true
+        // hasProducts: products.length>0, 
+        // activeShop: true, 
+        // productCSS: true
     })
 
     // res.sendFile(path.join(rootDir,'views', 'shop.html'))
