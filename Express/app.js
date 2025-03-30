@@ -18,6 +18,7 @@ app.use('/admin',admin.routes) // '/admin' filters the path that starts with adm
 app.use(shopRoutes)
 
 app.use('/',(req, res, next)=>{    //We can remove the path too, as it is the default.
-    res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))    //We can chain the send method with status,setHeader,etc...
+    res.status(404).render('404',{title:'Page not found'})
+    // res.status(404).sendFile(path.join(__dirname, 'views', '404.html'))    //We can chain the send method with status,setHeader,etc...
 })
 app.listen(3000);
