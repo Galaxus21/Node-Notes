@@ -7,6 +7,7 @@
 */
 
 /* To Setup handlebars
+const expressHbs = require('express-handlebars');
 app.engine('hbs', expressHbs({
     layoutsDir: 'views/layouts/', 
     defaultLayout: 'main-layout',

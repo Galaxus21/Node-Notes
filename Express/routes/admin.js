@@ -1,30 +1,15 @@
 const express = require('express');
 const path = require('path');
 
-const rootDir = require('../helper/path'); // \Express
+const productsController = require('../controllers/products')
 
 const router = express.Router()   //It's like a mini express app.
 
 const products = [];
 
 // /admin/add-product
-router.get('/add-product',(req, res, next)=>{
-    res.render('add-product',{
-        title: 'Add Product', 
-        path: '/admin/add-product', 
-        // activeAddProduct: true, 
-        // formsCSS: true, 
-        // productCSS: true
-    })
-    
-    // res.sendFile(path.join(rootDir, 'views', 'add-product.html'))
-    
-});
+router.get('/add-product',productsController.getAddProduct);
 
-router.post('/add-product', (req, res, next)=>{
-    products.push({title: req.body.title});
-    res.redirect('/');
-});
+router.post('/add-product',productsController.postAddProduct);
 
-module.exports.routes = router;  //Router is a valid middleware function
-module.exports.products = products;
+module.exports = router;  //Router is a valid middleware function
